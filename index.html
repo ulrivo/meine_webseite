@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lena Brandt – Portfolio</title>
+
+    <!-- ── SEO: Title & Description ── -->
+    <title>Lena Brandt – Webentwicklerin in Ausbildung | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio von Lena Brandt, angehender Webentwicklerin. Einblicke in Fähigkeiten in HTML und CSS sowie Kontaktmöglichkeiten für Anfragen."
+    />
+
+    <!-- ── Open Graph: Vorschau beim Teilen in sozialen Netzwerken ── -->
+    <meta
+      property="og:title"
+      content="Lena Brandt – Webentwicklerin in Ausbildung"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio von Lena Brandt, angehender Webentwicklerin. Fähigkeiten, Werdegang und Kontakt."
+    />
+    <meta property="og:image" content="bilder/lena-brandt.svg" />
+    <meta
+      property="og:url"
+      content="https://ulrivo.github.io/meine_webseite/"
+    />
+    <meta property="og:type" content="website" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +43,7 @@
       <h1>Lena Brandt</h1>
       <p>Webentwicklerin in Ausbildung</p>
 
-      <nav>
+      <nav class="navbar" aria-label="Hauptnavigation">
         <ul>
           <li><a href="#ueber-mich">Über mich</a></li>
           <li><a href="#faehigkeiten">Fähigkeiten</a></li>
@@ -34,14 +56,15 @@
       <!-- ───────────────────────────────── -->
       <!-- Abschnitt: Über mich -->
       <!-- ───────────────────────────────── -->
-      <section id="ueber-mich">
-        <h2>Über mich</h2>
+      <section id="ueber-mich" aria-labelledby="h-ueber-mich">
+        <h2 id="h-ueber-mich">Über mich</h2>
 
         <figure>
           <img
             src="bilder/lena-brandt.svg"
             alt="Portraitfoto von Lena Brandt, lächelnd vor neutralem Hintergrund"
             width="200"
+            height="200"
           />
           <figcaption>Lena Brandt, angehende Webentwicklerin</figcaption>
         </figure>
@@ -82,42 +105,47 @@
       <!-- ───────────────────────────────── -->
       <!-- Abschnitt: Fähigkeiten (Tabelle) -->
       <!-- ───────────────────────────────── -->
-      <section id="faehigkeiten">
-        <h2>Fähigkeiten-Übersicht</h2>
+      <section id="faehigkeiten" aria-labelledby="h-faehigkeiten">
+        <h2 id="h-faehigkeiten">Fähigkeiten-Übersicht</h2>
 
-        <table>
-          <thead>
-            <tr>
-              <td scope="col">Bereich</td>
-              <th scope="col">Kenntnisstand</th>
-              <th scope="col">Seit</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">HTML</th>
-              <td>Fortgeschritten</td>
-              <td>3 Monate</td>
-            </tr>
-            <tr>
-              <th scope="row">CSS</th>
-              <td>Einsteiger</td>
-              <td>1 Woche</td>
-            </tr>
-            <tr>
-              <th scope="row">Barrierefreiheit</th>
-              <td>Grundlagen</td>
-              <td>2 Wochen</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="tabelle-wrapper">
+          <table>
+            <caption>
+              Meine Fähigkeiten mit Kenntnisstand und Lernbeginn
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Bereich</th>
+                <th scope="col">Kenntnisstand</th>
+                <th scope="col">Seit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">HTML</th>
+                <td>Fortgeschritten</td>
+                <td>3 Monate</td>
+              </tr>
+              <tr>
+                <th scope="row">CSS</th>
+                <td>Einsteiger</td>
+                <td>1 Woche</td>
+              </tr>
+              <tr>
+                <th scope="row">Barrierefreiheit</th>
+                <td>Grundlagen</td>
+                <td>2 Wochen</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <!-- ───────────────────────────────── -->
       <!-- Abschnitt: Kontaktformular -->
       <!-- ───────────────────────────────── -->
-      <section id="kontakt">
-        <h2>Kontakt</h2>
+      <section id="kontakt" aria-labelledby="h-kontakt">
+        <h2 id="h-kontakt">Kontakt</h2>
 
         <p>
           Schreib mir gerne direkt über
@@ -125,7 +153,11 @@
           oder nutze das folgende Formular.
         </p>
 
-        <form action="https://httpbin.org/post" method="post">
+        <form
+          action="https://httpbin.org/post"
+          method="post"
+          aria-label="Kontaktformular"
+        >
           <div>
             <label for="name">Name*</label>
             <input type="text" id="name" name="name" required />
@@ -163,6 +195,9 @@
     </main>
 
     <footer>
+      <address>
+        <a href="mailto:lena.brandt@example.com">lena.brandt@example.com</a>
+      </address>
       <p>&copy; 2026 Lena Brandt</p>
     </footer>
   </body>
